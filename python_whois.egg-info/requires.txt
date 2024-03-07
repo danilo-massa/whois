@@ -1,4 +1,5 @@
 future
+PySocks
 
 [better date conversion]
 python-dateutil
