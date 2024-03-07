@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: python-whois
-Version: 0.9.0
+Version: 0.9.1
 Summary: Whois querying and parsing of domain registration information.
 Home-page: https://github.com/danilo-massa/whois.git
 Author: Richard Penman
