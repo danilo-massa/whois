@@ -374,6 +374,8 @@ class WhoisEntry(dict):
             return WhoisGroup(domain, text)
         elif domain.endswith('.market'):
             return WhoisMarket(domain, text)
+        elif domain.endswith('gov.za'):
+            return WhoisGovZa(domain,text)
         elif domain.endswith('.za'):
             return WhoisZa(domain, text)
         elif domain.endswith('.bw'):
@@ -3157,6 +3159,25 @@ class WhoisMarket(WhoisEntry):
         else:
             WhoisEntry.__init__(self, domain, text, self.regex)
 
+
+class WhoisGovZa(WhoisEntry):
+    """Whois parser for .gov.za domains
+    """
+
+    regex = {
+        'domain_name': r'1a\.\s*Domain Name : (.+)',
+        'name_servers': r'[Primary|Secondary] NS\s*:\s*(.+)',
+        'name': r'7c\.\s*Name of Applicant\s*:\s*(.+)',
+        'org': r'3c\.\s*Department\s*:\s*(.*)',
+        'emails': r'Email\s*:\s*(.+)',
+        'city': r'7a\.\s*Place\s*:\s*(.+)',
+    }
+
+    def __init__(self, domain, text):
+        if 'No match for "' in text:
+            raise PywhoisError(text)
+        else:
+            WhoisEntry.__init__(self, domain, text,self.regex)
 
 class WhoisZa(WhoisEntry):
     """Whois parser for .za domains"""

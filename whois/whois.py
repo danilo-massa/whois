@@ -89,6 +89,12 @@ class NICClient(object):
     MX_HOST = "whois.mx"
     NICHOST = "whois.crsnic.net"
     NL_HOST = 'whois.domain-registry.nl'
+    COZA_HOST = "coza-whois.dns.net.za"
+    GOVZA_HOST = "mta.gov.za"
+    ORGZA_HOST = "orgza-whois.dns.net.za"
+    JOBURG_HOST = "joburg-whois.dns.net.za"
+    CAPETOWN_HOST = "capetown-whois.dns.net.za"
+    DURBAN_HOST = "durban-whois.dns.net.za"
     NORIDHOST = "whois.norid.no"
     ONLINE_HOST = "whois.nic.online"
     OOO_HOST = "whois.nic.ooo"
@@ -307,6 +313,19 @@ class NICClient(object):
             return NICClient.LT_HOST
         elif tld == 'market':
             return NICClient.MARKET_HOST
+        elif tld == 'joburg':
+            return NICClient.JOBURG_HOST
+        elif tld == 'capetown':
+            return NICClient.CAPETOWN_HOST
+        elif tld == 'durban':
+            return NICClient.DURBAN_HOST
+        elif tld == 'za':
+            if domain[-2]=="co":
+                return NICClient.COZA_HOST
+            elif domain[-2]=="gov":
+                return NICClient.GOVZA_HOST
+            else:
+                return NICClient.ZA_HOST
         elif tld == 'money':
             return NICClient.MONEY_HOST
         elif tld == 'mx':
@@ -323,8 +342,6 @@ class NICClient(object):
             return NICClient.PE_HOST
         elif tld == 'website':
             return NICClient.WEBSITE_HOST
-        elif tld == 'za':
-            return NICClient.ZA_HOST
         elif tld == 'ru':
             return NICClient.RU_HOST
         elif tld == 'bz':
