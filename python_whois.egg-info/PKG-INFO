@@ -7,7 +7,6 @@ Author: Richard Penman
 Author-email: richard.penman@gmail.com
 License: MIT
 Keywords: whois,python
-Platform: UNKNOWN
 Classifier: Environment :: Web Environment
 Classifier: Intended Audience :: Developers
 Classifier: License :: OSI Approved :: MIT License
@@ -16,8 +15,10 @@ Classifier: Programming Language :: Python
 Classifier: Topic :: Internet :: WWW/HTTP
 Classifier: Programming Language :: Python :: 2
 Classifier: Programming Language :: Python :: 3
-Provides-Extra: better date conversion
 License-File: LICENSE.txt
+Requires-Dist: future
+Provides-Extra: better-date-conversion
+Requires-Dist: python-dateutil; extra == "better-date-conversion"
 
 Goal
 ====
@@ -135,5 +136,3 @@ Basically each TLD has a similar format to the following:
             raise PywhoisError(text)
         else:
             WhoisEntry.__init__(self, domain, text)
-
-
