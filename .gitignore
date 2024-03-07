@@ -8,13 +8,3 @@ __pycache__/
 build/
 develop-eggs/
 dist/
-downloads/
-eggs/
-.eggs/
-lib/
-parts/
-test/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
