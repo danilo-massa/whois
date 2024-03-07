@@ -7,11 +7,12 @@ def read(filename):
 
 setuptools.setup(
     name='python-whois',
-    version='0.8.2',
+    version='0.9.1',
     description="Whois querying and parsing of domain registration information.",
     long_description=read('README.rst'),
     install_requires=[
         'future',
+        'PySocks',
     ],
     classifiers=[
         'Environment :: Web Environment',
@@ -26,7 +27,8 @@ setuptools.setup(
     keywords='whois, python',
     author='Richard Penman',
     author_email='richard.penman@gmail.com',
-    url='https://github.com/richardpenman/whois',
+    maintainer='Danilo Massa',
+    url='https://github.com/danilo-massa/whois.git',
     license='MIT',
     packages=['whois'],
     package_dir={'whois':'whois'},
