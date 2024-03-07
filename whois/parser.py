@@ -374,7 +374,7 @@ class WhoisEntry(dict):
             return WhoisGroup(domain, text)
         elif domain.endswith('.market'):
             return WhoisMarket(domain, text)
-        elif domain.endswith('gov.za'):
+        elif domain.endswith('.gov.za'):
             return WhoisGovZa(domain,text)
         elif domain.endswith('.za'):
             return WhoisZa(domain, text)
